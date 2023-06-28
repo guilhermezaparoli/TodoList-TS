@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 736px;
+  height: 244px;
+
+  border-top: 1px solid var(--gray-400);
+}
+
+.sectionBox img {
+  margin-bottom: 16px;
+}
+.sectionBox p {
+  color: var(--gray-300);
+  line-height: 1.4;
+}
+
+.sectionBox :nth-child(2) {
+  font-weight: bold;
+}

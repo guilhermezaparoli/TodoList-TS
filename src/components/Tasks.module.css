@@ -1,0 +1,148 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: -15px 20px 0px;
+  padding-bottom: 140px;
+
+  position: relative;
+}
+
+.container div button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  background-color: var(--blue-dark);
+  color: var(--gray-100);
+
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+}
+
+.container div button:hover {
+  background-color: var(--blue);
+}
+
+.container div button svg {
+  height: 16px;
+  width: 16px;
+}
+@media (max-width: 768px) {
+  .inputTask {
+    max-width: 200px;
+  }
+  .inputTask::placeholder {
+    font-size: 0.875rem;
+  }
+
+  .textBlue {
+    margin-left: 10px;
+  }
+  .countTasks:nth-child(2) {
+    margin-right: 10px;
+  }
+}
+.inputTask {
+  width: 638px;
+  height: 54px;
+
+  padding: 16px;
+
+  color: var(--gray-100);
+
+  background-color: var(--gray-500);
+  border: none;
+  border-radius: 8px;
+}
+
+.inputTask:focus {
+  outline: 1px solid var(--purple-dark);
+}
+
+.borderErrorInputTask {
+  width: 638px;
+  height: 54px;
+
+  padding: 16px;
+
+  color: var(--gray-100);
+
+  background-color: var(--gray-500);
+  border: none;
+  border-radius: 8px;
+  outline: 1px solid var(--danger-200);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionBox {
+  display: flex;
+  justify-content: center;
+}
+.content {
+  width: 736px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 24px;
+}
+
+.content div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.textBlue {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.7;
+
+  color: var(--blue);
+}
+
+.countTasks {
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: var(--gray-200);
+
+  background-color: var(--gray-400);
+}
+
+.textPurple {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.7;
+
+  color: var(--purple);
+}
+
+.hasError {
+  position: absolute;
+  left: 10%;
+  bottom: 60%;
+  font-size: 0.875rem;
+  color: var(--danger-200);
+}
