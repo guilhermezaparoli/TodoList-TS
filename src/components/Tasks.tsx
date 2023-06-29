@@ -17,16 +17,22 @@ export function Tasks() {
   const [newTaskText, setNewTaskText] = useState("");
   const [hasError, setHasError] = useState(false);
 
+  const [condition, setCondition] = useState(false);
+
   useEffect(() => {
     const data = window.localStorage.getItem("MY_TODO_TASKS");
-    if (data !== null) setTasks(JSON.parse(data));
+    const json = data && JSON.parse(data);
+    console.log(data);
+    if (data?.length) setTasks(json);
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem("MY_TODO_TASKS", JSON.stringify(tasks));
+    if (condition)
+      window.localStorage.setItem("MY_TODO_TASKS", JSON.stringify(tasks));
   }, [tasks]);
 
   function handleNewTask(e: FormEvent) {
+    setCondition(true);
     e.preventDefault();
     if (!newTaskText) {
       setHasError(true);
@@ -49,6 +55,7 @@ export function Tasks() {
   }
 
   function handleDeleteTask(id: number) {
+    setCondition(true);
     const tasksWithoutDeleteOne = tasks.filter((task) => {
       return id !== task.id;
     });
@@ -57,6 +64,7 @@ export function Tasks() {
   }
 
   function handleCompleteTask(id: number) {
+    setCondition(true);
     const newList: any = tasks.map((task) => {
       if (task.id === id) {
         const updateTask = {

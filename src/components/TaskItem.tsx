@@ -17,7 +17,7 @@ export function TaskItem({
   onDeleteTask,
   onCompleteTask,
 }: TaskItemProps) {
-  const [checkboxStatus, setCheckboxStatus] = useState(false);
+  const [checkboxStatus, setCheckboxStatus] = useState(task.isComplete);
 
   function completeTask() {
     onCompleteTask(task.id);
@@ -29,7 +29,7 @@ export function TaskItem({
   }
 
   function handleCheckbox() {
-    setCheckboxStatus(!checkboxStatus);
+    setCheckboxStatus(!task.isComplete);
   }
 
   return (
