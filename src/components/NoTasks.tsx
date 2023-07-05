@@ -1,4 +1,3 @@
-import { ClipboardText } from "phosphor-react";
 import clipboard from "../assets/clipboard.svg";
 import styles from "./NoTasks.module.css";
 
