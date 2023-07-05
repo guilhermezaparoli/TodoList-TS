@@ -16,7 +16,7 @@
   border-top: 1px solid var(--gray-400);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .sectionBox {
     height: 200px;
   }
