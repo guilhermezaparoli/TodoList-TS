@@ -1,12 +1,14 @@
 .container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   margin: -15px 20px 0px;
-  padding-bottom: 140px;
-
-  position: relative;
 }
 
 .container div button {
@@ -40,23 +42,9 @@
   height: 16px;
   width: 16px;
 }
-@media (max-width: 768px) {
-  .inputTask {
-    max-width: 200px;
-  }
-  .inputTask::placeholder {
-    font-size: 0.875rem;
-  }
 
-  .textBlue {
-    margin-left: 10px;
-  }
-  .countTasks:nth-child(2) {
-    margin-right: 10px;
-  }
-}
 .inputTask {
-  width: 638px;
+  width: 100%;
   height: 54px;
 
   padding: 16px;
@@ -73,7 +61,7 @@
 }
 
 .borderErrorInputTask {
-  width: 638px;
+  width: 100%;
   height: 54px;
 
   padding: 16px;
@@ -95,6 +83,7 @@
 .sectionBox {
   display: flex;
   justify-content: center;
+  padding-top: 140px;
 }
 .content {
   width: 736px;
@@ -139,10 +128,40 @@
   color: var(--purple);
 }
 
+.containerHasError {
+  margin: 0 20px;
+}
+
 .hasError {
-  position: absolute;
-  left: 10%;
-  bottom: 60%;
+  display: flex;
+  justify-content: start;
+  margin-top: 10px;
   font-size: 0.875rem;
   color: var(--danger-200);
+}
+@media (max-width: 768px) {
+  .inputTask::placeholder {
+    font-size: 0.875rem;
+  }
+
+  .borderErrorInputTask::placeholder {
+    font-size: 0.875rem;
+  }
+
+  .textBlue {
+    margin-left: 10px;
+  }
+  .countTasks:nth-child(2) {
+    margin-right: 10px;
+  }
+
+  .hasError {
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .inputTask {
+    padding: 6px;
+  }
 }

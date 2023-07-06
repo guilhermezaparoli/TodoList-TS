@@ -22,7 +22,6 @@ export function Tasks() {
   useEffect(() => {
     const data = window.localStorage.getItem("MY_TODO_TASKS");
     const json = data && JSON.parse(data);
-    console.log(data);
     if (data?.length) setTasks(json);
   }, []);
 
@@ -84,27 +83,29 @@ export function Tasks() {
   }).length;
 
   return (
-    <div>
+    <>
       <form className={styles.container} onSubmit={handleNewTask}>
-        <input
-          className={`${
-            hasError ? styles.borderErrorInputTask : styles.inputTask
-          }`}
-          type="text"
-          placeholder="Adicione uma nova tarefa"
-          onChange={handleOnChange}
-          value={newTaskText}
-        />
-        <div>
+        <div className={styles.formWrapper}>
+          <input
+            className={`${
+              hasError ? styles.borderErrorInputTask : styles.inputTask
+            }`}
+            type="text"
+            placeholder="Adicione uma nova tarefa"
+            onChange={handleOnChange}
+            value={newTaskText}
+          />
           <button type="submit">
             Criar <PlusCircle weight="bold" />
           </button>
         </div>
-        {hasError && (
-          <p className={styles.hasError}>
-            Por favor, insira um título para sua tarefa.
-          </p>
-        )}
+        <div className={styles.containerHasError}>
+          {hasError && (
+            <p className={styles.hasError}>
+              Por favor, insira um título para sua tarefa.
+            </p>
+          )}
+        </div>
       </form>
 
       <main className={styles.sectionBox}>
@@ -134,6 +135,6 @@ export function Tasks() {
           );
         })
       )}
-    </div>
+    </>
   );
 }
